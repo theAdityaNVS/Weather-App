@@ -11,3 +11,12 @@ body {
 .card {
     background-color: #F8F9FA;
 }
+
+.icon {
+    position: relative;
+    top: -50px;
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: -40px;
+    border: 0.5px solid #D5D4D3;
+}
