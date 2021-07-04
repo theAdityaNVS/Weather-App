@@ -6,14 +6,15 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Weather App</title>
+    <title>Weather Check</title>
 </head>
 <body>
     <div class="container my-5 mx-auto">
-        <h1 class="text-muted text-center my-4">Weather App</h1>
+        <h1 class="text-muted text-center my-4 display-5">Weather Check</h1>
         <form class="change-location my-4 text-center text-muted">
-            <label for="city">Enter a location for weather information</label>
-            <input type="text" name="city" class="form-control p-2 mt-2">
+            <label for="city">Enter a location for Current Weather Info</label>
+            <input type="text" name="city" class="form-control rounded shadow-sm p-2 mt-2 font-weight-light" placeholder="Enter City">
+            <p class="my-2 text-center text-muted d-none">Showing Results for <span class="last-city primary"></span></p>
         </form>
 
         <div class="card shadow-lg rounded d-none">

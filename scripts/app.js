@@ -2,7 +2,8 @@ const cityInp = document.querySelector('form');
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
 const icon = document.querySelector('.icon');
-const time = document.querySelector('.time'); 
+const time = document.querySelector('.time');
+const lastCityDis = document.querySelector('.last-city');
 
 const updateUI = (data) => {
     // const cityDetails = data.cityDetails;
@@ -23,7 +24,7 @@ const updateUI = (data) => {
     icon.innerHTML = `
         <img src="./img/icons/${weatherDetails.WeatherIcon}.svg">
     `;
-    console.log(weatherDetails.IsDayTime)
+    // console.log(weatherDetails.IsDayTime)
     let timeSrc = (weatherDetails.IsDayTime) ? './img/day.svg' : './img/night.svg';
 
     time.setAttribute('src', timeSrc);
@@ -52,4 +53,17 @@ cityInp.addEventListener('submit', (e)=>{
     updateCity(city)
     .then(data => updateUI(data))
     .catch(err => console.log(err));
+
+    localStorage.setItem('city', city);
 })
+
+if(localStorage.getItem('city')){
+    var lastCity = localStorage.getItem('city');
+    lastCityDis.innerHTML = lastCity;
+    if(lastCityDis.parentElement.classList.contains('d-none')){
+        lastCityDis.parentElement.classList.remove('d-none');
+    }
+    updateCity(lastCity)
+    .then(data => updateUI(data))
+    .catch(err => console.log(err));
+}

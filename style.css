@@ -1,5 +1,5 @@
 body {
-    background: #eeedec;
+    background: #f0efeb;
     letter-spacing: 0.2em;
     font-size: 0.8em;
 }
@@ -10,6 +10,7 @@ body {
 
 .card {
     background-color: #F8F9FA;
+    border-radius: 30px !important;
 }
 
 .icon {
